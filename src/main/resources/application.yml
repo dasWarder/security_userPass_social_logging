@@ -1,0 +1,36 @@
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    url: jdbc:h2:mem:db
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    generate-ddl: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${GITHUB_OAUTH_CLIENT}
+            client-secret: ${GITHUB_OAUTH_SECRET}
+          google:
+            client-id: fdgdfgdfhdfhg
+            client-secret: dfgdfgdfhdfh
+            scope:
+              - profile
+              - openid
+              - email
+
+
+github:
+  clientId: ${GITHUB_OAUTH_CLIENT}
+  clientSecret: ${GITHUB_OAUTH_SECRET}
